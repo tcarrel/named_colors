@@ -34,8 +34,9 @@
 //   
 //      Color names were taken from
 //    < https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F >,
-//    < https://en.wikipedia.org/wiki/List_of_colors:_G%E2%80%93M >, and
-//    < https://en.wikipedia.org/wiki/List_of_colors:_N%E2%80%93Z >
+//    < https://en.wikipedia.org/wiki/List_of_colors:_G%E2%80%93M >,
+//    < https://en.wikipedia.org/wiki/List_of_colors:_N%E2%80%93Z >, and
+//    < https://en.wikipedia.org/wiki/Pantone_448_C >
 //    on October 30, 2021.  This is only as accurate and complete as those lists were at that time.  It was, however,
 //    necessary--for obvious reasons--to alter many of the names to make the work in C++.  The following is an explanation
 //    of how I've gone about this:
@@ -692,7 +693,9 @@ enum class hex_color : uint32_t
     OLD_SILVER                              = 0x84'84'82'ff,
     OLIVE                                   = 0x80'80'00'ff,
     OLIVE_DRAB_NUMBER_3                     = 0x6B'8E'23'ff,
+    OD3                                     = 0x6B'8E'23'ff,
     OLIVE_DRAB_NUMBER_7                     = 0x3C'34'1F'ff,
+    OD7                                     = 0x3C'34'1F'ff,
     OLIVE_GREEN                             = 0xB5'B3'5C'ff,
     OLIVINE                                 = 0x9A'B9'73'ff,
     ONYX                                    = 0x35'38'39'ff,
@@ -1068,7 +1071,9 @@ enum class hex_color : uint32_t
     YELLOW_SUNSHINE                         = 0xFF'F7'00'ff,
     YINMN_BLUE                              = 0x2E'50'90'ff,
     ZAFFRE                                  = 0x00'14'A8'ff,
-    ZOMP                                    = 0x39'A7'8E'ff
+    ZOMP                                    = 0x39'A7'8E'ff,
+
+    PANTONE_448_C                           = 0x4A'41'2A'ff
 };
 #else
 namespace hex_color
@@ -1684,7 +1689,9 @@ namespace hex_color
     constexpr uint32_t        OLD_SILVER{                              0x84'84'82'ff };
     constexpr uint32_t        OLIVE{                                   0x80'80'00'ff };
     constexpr uint32_t        OLIVE_DRAB_NUMBER_3{                     0x6B'8E'23'ff };
+    constexpr uint32_t        OD3{                                     OLIVE_DRAB_NUMBER_3 };
     constexpr uint32_t        OLIVE_DRAB_NUMBER_7{                     0x3C'34'1F'ff };
+    constexpr uint32_t        OD7{                                     OLIVE_DRAB_NUMBER_7 };
     constexpr uint32_t        OLIVE_GREEN{                             0xB5'B3'5C'ff };
     constexpr uint32_t        OLIVINE{                                 0x9A'B9'73'ff };
     constexpr uint32_t        ONYX{                                    0x35'38'39'ff };
@@ -2061,6 +2068,8 @@ namespace hex_color
     constexpr uint32_t        YINMN_BLUE{                              0x2E'50'90'ff };
     constexpr uint32_t        ZAFFRE{                                  0x00'14'A8'ff };
     constexpr uint32_t        ZOMP{                                    0x39'A7'8E'ff };
+
+    constexpr uint32_t        PANTONE_448_C{                           0x4A'41'2A'ff };
 }
 #endif
 
@@ -2696,7 +2705,9 @@ constexpr auto         OLD_ROSE{                                from_hex( hex_co
 constexpr auto         OLD_SILVER{                              from_hex( hex_color::OLD_SILVER ) };
 constexpr auto         OLIVE{                                   from_hex( hex_color::OLIVE ) };
 constexpr auto         OLIVE_DRAB_NUMBER_3{                     from_hex( hex_color::OLIVE_DRAB_NUMBER_3 ) };
+constexpr auto         OD3{                                     from_hex( hex_color::OD3 ) };
 constexpr auto         OLIVE_DRAB_NUMBER_7{                     from_hex( hex_color::OLIVE_DRAB_NUMBER_7 ) };
+constexpr auto         OD7{                                     from_hex( hex_color::OD7 ) };
 constexpr auto         OLIVE_GREEN{                             from_hex( hex_color::OLIVE_GREEN ) };
 constexpr auto         OLIVINE{                                 from_hex( hex_color::OLIVINE ) };
 constexpr auto         ONYX{                                    from_hex( hex_color::ONYX ) };
@@ -3073,4 +3084,5 @@ constexpr auto         YELLOW_SUNSHINE{                         from_hex( hex_co
 constexpr auto         YINMN_BLUE{                              from_hex( hex_color::YINMN_BLUE ) };
 constexpr auto         ZAFFRE{                                  from_hex( hex_color::ZAFFRE ) };
 constexpr auto         ZOMP{                                    from_hex( hex_color::ZOMP ) };
+constexpr auto         PANTONE_448_C{                           from_hex( hex_color::PANTONE_448_C ) };
 #endif //NAMED_COLORS_ENABLE_TUPLES

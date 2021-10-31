@@ -1043,5 +1043,7 @@ int main()
     std::cout << "ZAFFRE                                  :\t" << ZAFFRE << '\n';
     std::cout << "ZOMP                                    :\t" << ZOMP << '\n';
 
+    std::cout << "PANTONE_448_C                           :\t" << PANTONE_448_C << '\n';
+
     return 0;
 }
