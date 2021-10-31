@@ -1,13 +1,16 @@
 
 
-// This isn't much of a test, it mainly just prints out the floating point representations of each color.
+//
+//   This isn't much of a test, it mainly just prints out the floating point representations of each color.
+// It mainly allows you to see the effect of the options by commenting/uncommenting the defines before the
+// #include of <name_colors.h>.
+// 
 // This file requires C++ 20 to work, but named_colors.h only requires C++17.
+//
 
 
 //#define NAMED_COLORS_PREFER_ENUM
-//#define NAMED_COLORS_ENABLE_TUPLES
-
-
+#define NAMED_COLORS_ENABLE_TUPLES
 #include "named_colors.h"
 
 
@@ -41,9 +44,8 @@ std::ostream& operator<<( std::ostream& os, const hex_color& color )
 
 int main()
 {
-    // The following definitions are only here to make playing with the options above work.
-    // They are not necessary and should probably be avoided in actual use.
-
+    //   The following precompiler flags are only here to make playing with the options above work.
+    // I would avoid using 'using' normally.
 #ifndef NAMED_COLORS_ENABLE_TUPLES
 #   if defined(NAMED_COLORS_PREFER_ENUM)
         using enum hex_color;
